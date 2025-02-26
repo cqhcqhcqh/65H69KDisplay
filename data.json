@@ -1,0 +1,112 @@
+[
+    {
+        "hotelName": "北京洲际",
+        "brand": "InterContinental",
+        "name": "ProDisplay-50",
+        "coordinates": "116.41,39.90",
+        "supply": 70,
+        "size": "50",
+        "province": "北京",
+        "city": "北京"
+    },
+    {
+        "hotelName": "北京希尔顿",
+        "brand": "Hilton",
+        "name": "SmartTV-43",
+        "coordinates": "116.45,39.92",
+        "supply": 60,
+        "size": "43",
+        "province": "北京",
+        "city": "北京"
+    },
+    {
+        "hotelName": "北京万豪",
+        "brand": "Marriott",
+        "name": "UltraHD-55",
+        "coordinates": "116.38,39.88",
+        "supply": 45,
+        "size": "55",
+        "province": "北京",
+        "city": "北京"
+    },
+    {
+        "hotelName": "广州希尔顿",
+        "brand": "Hilton",
+        "name": "SmartTV-43",
+        "coordinates": "113.28,23.12",
+        "supply": 50,
+        "size": "43",
+        "province": "广东",
+        "city": "广州"
+    },
+    {
+        "hotelName": "广州香格里拉",
+        "brand": "Shangri-La",
+        "name": "LuxuryTV-50",
+        "coordinates": "113.25,23.14",
+        "supply": 80,
+        "size": "50",
+        "province": "广东",
+        "city": "广州"
+    },
+    {
+        "hotelName": "广州四季",
+        "brand": "Four Seasons",
+        "name": "UltraHD-55",
+        "coordinates": "113.30,23.10",
+        "supply": 35,
+        "size": "55",
+        "province": "广东",
+        "city": "广州"
+    },
+    {
+        "hotelName": "深圳喜来登",
+        "brand": "Sheraton",
+        "name": "SmartTV-43",
+        "coordinates": "114.06,22.54",
+        "supply": 25,
+        "size": "43",
+        "province": "广东",
+        "city": "深圳"
+    },
+    {
+        "hotelName": "深圳瑞吉",
+        "brand": "St. Regis",
+        "name": "PremiumTV-65",
+        "coordinates": "114.04,22.52",
+        "supply": 90,
+        "size": "65",
+        "province": "广东",
+        "city": "深圳"
+    },
+    {
+        "hotelName": "深圳万豪",
+        "brand": "Marriott",
+        "name": "UltraHD-55",
+        "coordinates": "114.08,22.56",
+        "supply": 40,
+        "size": "55",
+        "province": "广东",
+        "city": "深圳"
+    },
+    {
+        "hotelName": "上海万豪",
+        "brand": "Marriott",
+        "name": "UltraHD-55",
+        "coordinates": "121.47,31.23",
+        "supply": 30,
+        "size": "55",
+        "province": "上海",
+        "city": "上海"
+    },
+    {
+        "hotelName": "上海浦东丽思卡尔顿",
+        "brand": "Ritz-Carlton",
+        "name": "LuxuryTV-50",
+        "coordinates": "121.50,31.22",
+        "supply": 65,
+        "size": "50",
+        "province": "上海",
+        "city": "上海"
+    }
+]

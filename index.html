@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>项目分布地图</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 筛选控件 -->
+    <div id="controls">
+        <select id="brandFilter"><option value="">所有品牌</option></select>
+        <select id="sizeFilter"><option value="">所有尺寸</option></select>
+        <button id="resetMap">返回全国</button>
+    </div>
+    <!-- 地图容器 -->
+    <div id="map"></div>
+    <!-- 数据统计和索引 -->
+    <div id="stats">
+        <h3>数据统计</h3>
+        <p>总酒店数: <span id="hotelCount"></span></p>
+        <p>总供货数: <span id="supplyCount"></span></p>
+        <div id="indexInfo">
+            <p>品牌布局: <span id="brandIndex"></span></p>
+            <p>尺寸数量: <span id="sizeIndex"></span></p>
+        </div>
+        <div id="chart"></div>
+    </div>
+    <script src="echarts.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
