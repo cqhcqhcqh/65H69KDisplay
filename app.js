@@ -58,7 +58,7 @@ function updateMap(filteredData) {
         backgroundColor: '#1e3c72',
         geo: {
             map: currentMap,
-            roam: true,
+            roam: false,
             itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' }
             // silent: true
         },
@@ -182,6 +182,12 @@ mapChart.on('click', params => {
 document.getElementById('brandFilter').addEventListener('change', () => updateAll(window.projectData));
 document.getElementById('modelFilter').addEventListener('change', () => updateAll(window.projectData));
 document.getElementById('provinceFilter').addEventListener('change', () => onChooseProvince());
+// 返回全国视图
+document.getElementById('resetMap').addEventListener('click', () => {
+    currentMap = 'china';
+    document.getElementById('provinceFilter').value = '全国'
+    updateAll(window.projectData);
+});
 
 async function initApp() {
     const builtinFilters = await fetch('data/filters.json')

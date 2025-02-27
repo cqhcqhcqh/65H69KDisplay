@@ -6,13 +6,14 @@ body {
     display: flex;           /* 使用 flex 布局 */
     flex-direction: row;     /* 宽屏时水平排列 */
     height: 100vh;           /* 占满视口高度 */
+    overflow: hidden; /* 防止地图内部滚动 */
 }
 
 #map {
     width: 70%;              /* 地图偏左，占 70% 宽度 */
-    height: calc(100vh - 80px); /* 留出顶部控件空间 */
+    height: calc(100vh - 108px); /* 留出顶部控件空间 */
     position: relative;
-    top: 80px;
+    top: 108px;
 }
 
 #controls {
@@ -28,6 +29,14 @@ body {
     border-radius: 5px;
 }
 
+select, button {
+    font-size: 28px;
+    padding: 18px 24px;
+    min-width: 220px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 #stats {
     position: relative;      /* 宽屏时跟随 flex 布局 */
     width: 30%;              /* 右侧占 30% 宽度 */
@@ -36,7 +45,7 @@ body {
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;        /* 内容超长时可滚动 */
-    top: 80px;               /* 对齐地图顶部 */
+    top: 108px;               /* 对齐地图顶部 */
 }
 
 #chart {

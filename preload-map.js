@@ -23,6 +23,9 @@ async function loadMapData(provinces) {
         // const provinces = ['广东', '北京'];
         for (const province of provinces) {
             const mapProvince = chinese_province_2_map_province[province]
+            if (!mapProvince) {
+                throw new Error(`${province} 不在 chineseProvince2MapProvince 表中`)
+            }
             const provinceResponse = await fetch(`map/province/${mapProvince}.json`);
             if (!provinceResponse.ok) throw new Error(`加载 ${mapProvince}.json 失败`);
             mapData.provinces[mapProvince] = await provinceResponse.json();

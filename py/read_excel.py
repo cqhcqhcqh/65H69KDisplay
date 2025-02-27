@@ -80,34 +80,51 @@ def create_database(df, sheet_name, db_name="data/hotels.db"):
             location TEXT,
             latitude REAL,
             longitude REAL,
-            UNIQUE(province, city, brand_name, hotel_name, location)
+            UNIQUE(province, city, brand_name, hotel_name, tv_model, location)
         )
     ''')
     
     # 遍历数据并插入
     No_NaN_province = None
     No_NaN_city = None
+    No_NaN_hotel = None
+    No_NaN_location = None
+    No_NaN_subbrand = None
+    province_offset = 1 if sheet_name == "清沐" else 0
     for index, row in df.iloc[1::].iterrows():
-        # 获取经纬度
-        latitude, longitude = get_coordinates(row.iloc[5])
-        province = row.iloc[0]
+        if province_offset == 1:
+            sheet_name = "清沐酒店"
+            subbrand = row.iloc[0]
+            if subbrand and pd.isna(subbrand) == False:
+                No_NaN_subbrand = subbrand
+        province = row.iloc[province_offset]
         if province and pd.isna(province) == False:
             No_NaN_province = province
-        city = row.iloc[1]
+        city = row.iloc[province_offset+1]
         if city and pd.isna(city) == False:
             No_NaN_city = city
+        hotel = row.iloc[province_offset+2]
+        if hotel and pd.isna(hotel) == False:
+            No_NaN_hotel = hotel
+        location = row.iloc[province_offset+5]
+        if location and pd.isna(location) == False:
+            No_NaN_location = location
+        
+        # 获取经纬度
+        latitude, longitude = get_coordinates(No_NaN_location)
         # 插入数据
         cursor.execute('''
-            INSERT OR IGNORE INTO hotels (brand_name, province, city, hotel_name, tv_model, tv_sales, location, latitude, longitude)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT OR IGNORE INTO hotels (brand_name, subbrand_name, province, city, hotel_name, tv_model, tv_sales, location, latitude, longitude)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             sheet_name,  # 品牌名（第一列）
+            No_NaN_subbrand,
             No_NaN_province,
             No_NaN_city,
-            row.iloc[2],
-            row.iloc[3],
-            row.iloc[4],
-            row.iloc[5],
+            No_NaN_hotel,
+            row.iloc[province_offset+3],
+            row.iloc[province_offset+4],
+            No_NaN_location,
             latitude,
             longitude
         ))
@@ -126,17 +143,20 @@ def create_database(df, sheet_name, db_name="data/hotels.db"):
 # 主函数
 def main():
     # Excel 文件路径
-    file_path = "data/hotels.xlsx"
+    file_path = "data/未命名表格.xlsx"
     
     # 读取 Excel
     df_hotels = pd.read_excel(file_path, sheet_name=None)
     for sheet_name, df in df_hotels.items():
-        if sheet_name =='朵兰达':
-            print("Excel 列名:", df.columns.tolist())
+        print(f"{sheet_name} 表正在录入....")
+        create_database(df, sheet_name)
+        print(f"{sheet_name} 表录入完成")
+        # if sheet_name =='万达':
+        #     print("Excel 列名:", df.columns.tolist())
             
-            # 创建数据库
-            create_database(df, sheet_name)
-            break
+        #     # 创建数据库
+        #     create_database(df, sheet_name)
+        #     break
     
     # 打印列名以确认数据结构
 
