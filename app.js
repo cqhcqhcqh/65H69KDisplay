@@ -84,15 +84,58 @@ function updateStats(filteredData) {
     document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0);
 }
 
-// 更新饼状图（按 tv_model 统计）
 function updateChart(filteredData) {
-    const modelData = filteredData.reduce((acc, item) => {
-        acc[item.model] = (acc[item.model] || 0) + item.supply; // 按电视机型号统计
+    // 按 tv_model 统计供货数
+    const sizeData = filteredData.reduce((acc, item) => {
+        const sizeName = item.model.slice(0, 2) + '寸'
+        acc[sizeName] = (acc[sizeName] || 0) + item.supply;
         return acc;
     }, {});
+
+    // 计算总数以计算百分比
+    const totalSupply = Object.values(sizeData).reduce((sum, value) => sum + value, 0);
+
+    // 转换为 ECharts 数据格式并计算百分比
+    const chartData = Object.entries(sizeData).map(([name, value]) => ({
+        name,
+        value,
+        percent: totalSupply > 0 ? ((value / totalSupply) * 100).toFixed(1) : 0 // 计算百分比，保留2位小数
+    }));
+
     chart.setOption({
-        title: { text: '尺寸占比', left: 'center', textStyle: { fontSize: 24 } },
-        series: [{ type: 'pie', radius: '50%', data: Object.entries(modelData).map(([name, value]) => ({ name, value })), label: { fontSize: 18 } }]
+        title: { 
+            text: '尺寸占比', 
+            left: 'center', 
+            textStyle: { fontSize: 24 } 
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: '{a} <br/>{b} : {c} ({d}%)' // 工具提示显示名称、值和百分比
+        },
+        series: [{
+            name: '尺寸占比',
+            type: 'pie',                // 使用饼图
+            radius: ['40%', '70%'],     // 设置为环形图，内半径40%，外半径70%
+            avoidLabelOverlap: true,    // 避免标签重叠
+            label: {
+                show: true,             // 显示标签
+                formatter: '{b}: {d}%', // 显示名称和百分比
+                fontSize: 12            // 标签字体大小，适配多类别
+            },
+            labelLine: {
+                show: true,             // 显示标签连接线
+                length: 20,             // 连接线长度
+                length2: 30             // 第二段连接线长度
+            },
+            data: chartData,           // 使用计算后的数据
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,    // 高亮时添加阴影
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }]
     });
 }
 
@@ -101,20 +144,18 @@ function updateIndex(filteredData) {
     const selectedBrand = document.getElementById('brandFilter').value;
     const selectedModel = document.getElementById('modelFilter').value;
 
-    if (selectedBrand) {
-        const brandData = filteredData.filter(item => item.brand === selectedBrand);
-        const provinces = [...new Set(brandData.map(item => item.province))].join(', ');
-        document.getElementById('brandIndex').textContent = `${brandData.length} 个项目，分布: ${provinces || '无'}`;
-    } else {
-        document.getElementById('brandIndex').textContent = '未选择品牌';
+    let brandData = filteredData;
+    if (selectedBrand !== '所有品牌') {
+        brandData = filteredData.filter(item => item.brand === selectedBrand);
     }
+    const provinces = [...new Set(brandData.map(item => item.province))].join(', ');
+    document.getElementById('brandIndex').textContent = `${brandData.length} 个项目，分布: ${provinces || '无'}`;
 
-    if (selectedModel) {
-        const modelData = filteredData.filter(item => item.model === selectedModel);
-        document.getElementById('modelIndex').textContent = `${modelData.reduce((sum, item) => sum + item.supply, 0)} 台`;
-    } else {
-        document.getElementById('modelIndex').textContent = '未选择尺寸';
+    let modelData = filteredData;
+    if (selectedModel !== '所有型号') {
+        modelData = filteredData.filter(item => item.model === selectedModel);
     }
+    document.getElementById('modelIndex').textContent = `${modelData.reduce((sum, item) => sum + item.supply, 0)} 台`;
 }
 
 // 更新所有视图
@@ -169,11 +210,11 @@ mapChart.on('click', params => {
     if (params.componentType === 'geo') {
         const regionName = params.name;
         currentMap = chineseProvince2MapProvince(regionName);
-        document.getElementById('provinceFilter').value = regionName;
         if (!currentMap) {
             alert(`${regionName} 没有对应的地图`)
             return
         }
+        document.getElementById('provinceFilter').value = regionName;
         updateAll(window.projectData)
     }
 });

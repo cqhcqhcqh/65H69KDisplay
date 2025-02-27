@@ -48,6 +48,19 @@ select, button {
     top: 108px;               /* 对齐地图顶部 */
 }
 
+/* 突出数字（span），保持标题（strong）清晰 */
+#stats p strong {
+    font-size: 22px;         /* 减小标题字体，保持清晰但不突出 */
+    color: #333;             /* 深灰色，普通颜色，不抢眼 */
+    font-weight: normal;     /* 取消加粗，保持普通粗细 */
+}
+
+#stats p span {
+    font-size: 28px;         /* 增大数字字体，进一步突出 */
+    color: #ffd700;          /* 使用金色，鲜艳突出，与地图蓝色形成对比 */
+    font-weight: bold;       /* 加粗数字，确保突出 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 添加轻微阴影，提升立体感 */
+}
 #chart {
     width: 100%;
     height: clamp(200px, 25vw, 400px); /* 饼图高度随屏幕宽度调整，最小 200px，最大 400px */
