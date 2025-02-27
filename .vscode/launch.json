@@ -7,6 +7,13 @@
             "name": "Launch Chrome with Live Server",
             "url": "http://127.0.0.1:5500/index.html",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
         }
     ]
 }

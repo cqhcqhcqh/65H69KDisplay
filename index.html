@@ -9,8 +9,8 @@
     <!-- 筛选控件 -->
     <div id="controls">
         <select id="brandFilter"><option value="">所有品牌</option></select>
-        <select id="sizeFilter"><option value="">所有尺寸</option></select>
-        <button id="resetMap">返回全国</button>
+        <select id="modelFilter"><option value="">所有型号</option></select>
+        <select id="provinceFilter"><option value="">所有省份</option></select>
     </div>
     <!-- 地图容器 -->
     <div id="map"></div>
@@ -21,11 +21,12 @@
         <p>总供货数: <span id="supplyCount"></span></p>
         <div id="indexInfo">
             <p>品牌布局: <span id="brandIndex"></span></p>
-            <p>尺寸数量: <span id="sizeIndex"></span></p>
+            <p>尺寸数量: <span id="modelIndex"></span></p>
         </div>
         <div id="chart"></div>
     </div>
     <script src="echarts.min.js"></script>
+    <script src="preload-map.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

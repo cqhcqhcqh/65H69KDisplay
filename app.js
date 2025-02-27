@@ -1,113 +1,105 @@
-// 初始化地图和饼状图实例
-const mapChart = echarts.init(document.getElementById('map'));  // 地图容器
-const chart = echarts.init(document.getElementById('chart'));   // 饼状图容器
-let currentLevel = 'china';                                    // 当前地图层级：全国、省、市
-let currentRegion = null;                                      // 当前选中的区域名称
+// 初始化地图和饼状图
+const mapChart = echarts.init(document.getElementById('map'));
+const chart = echarts.init(document.getElementById('chart'));
+let currentMap = 'china';
 
-// 存储地图数据的对象
-const mapData = {
-    china: null,           // 全国地图数据
-    provinces: {},         // 省份地图数据
-    cities: {}             // 城市地图数据
-};
-
-// 省份中心点坐标（示例，可根据实际 GeoJSON 调整）
-const provinceCenters = {
-    '广东': [113.2665, 23.1322],  // 广州附近
-    '北京': [116.4074, 39.9042],  // 北京中心
-    '上海': [121.4737, 31.2304]   // 上海中心
-};
-
-// 加载全国地图数据
-fetch('map/china.json')
-    .then(res => res.json())
-    .then(geoJson => {
-        mapData.china = geoJson;                           // 存储全国地图
-        echarts.registerMap('china', geoJson);             // 注册全国地图
-        loadData();                                        // 加载项目数据
-    })
-    .catch(err => alert('加载 map/china.json 失败: ' + err)); // 错误提示
-
-// 加载项目数据
+// 加载 SQLite 数据（用 Node.js 预处理生成 JSON）
 function loadData() {
-    fetch('data.json')
-        .then(res => res.json())
-        .then(data => {
-            window.projectData = data;                     // 全局存储项目数据
-            initFilters(data);                             // 初始化筛选器
-            updateAll(data);                               // 更新所有视图
+    fetch('data/data.json')
+        .then(res => {
+            if (!res.ok) throw new Error('加载 data.json 失败');
+            return res.json();
         })
-        .catch(err => alert('加载 data.json 失败: ' + err));
+        .then(data => {
+            window.projectData = data;  // 全局存储
+            updateAll(data);
+        })
+        .catch(err => {
+            alert(`加载 data.json 失败: ${err.message}`);
+            // 备用方案：嵌入默认数据（可选）
+            window.projectData = [/* 示例数据 */];
+            updateAll(window.projectData);
+        });
 }
 
-// 初始化筛选器（品牌和尺寸）
+function loadFilters() {
+    fetch('filters.json').then(res => {
+        if (!res.ok) {
+            throw new Error('failed to load data.json!')
+        }
+        return res.json()
+    })
+    .then(data => {
+        window.filtersData = data;
+        initFilters(data);
+    })
+    .catch(err => {
+        alert('loadFilters failed with exception: ', err);
+        window.filtersData = {'brands': [], 'provinces': [], 'models': []}
+        initFilters(window.filtersData);
+    })
+}
+
+// 初始化筛选器
 function initFilters(data) {
-    const brands = [...new Set(data.map(item => item.brand))]; // 获取唯一品牌列表
-    document.getElementById('brandFilter').innerHTML += brands.map(b => `<option>${b}</option>`).join('');
+    const brandFilter = document.getElementById('brandFilter');
+    brandFilter.innerHTML = data['brands'].map(b => `<option>${b}</option>`).join('') 
 
-    const sizes = [...new Set(data.map(item => item.size))];   // 获取唯一尺寸列表
-    document.getElementById('sizeFilter').innerHTML += sizes.map(s => `<option>${s}</option>`).join('');
+    const provinceFilter = document.getElementById('provinceFilter');
+    provinceFilter.innerHTML = data['provinces'].map(b => `<option>${b}</option>`).join('')
+
+    const modelFilter = document.getElementById('modelFilter');
+    modelFilter.innerHTML = data['models'].map(b => `<option>${b}</option>`).join('')
 }
 
-// 更新地图视图
+// 更新地图（保持不变，但从数据库数据中读取）
 function updateMap(filteredData) {
-    const option = {
-        backgroundColor: '#1e3c72',                      // 地图背景色
+    mapChart.setOption({
+        backgroundColor: '#1e3c72',
         geo: {
-            map: currentLevel === 'china' ? 'china' : currentRegion, // 当前地图层级
-            roam: true,                                  // 允许缩放和平移
-            itemStyle: {
-                areaColor: '#2a5298',                    // 区域颜色
-                borderColor: '#ffffff'                   // 边框颜色
-            }
+            map: currentMap,
+            roam: true,
+            itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' }
+            // silent: true
         },
         series: [{
-            type: 'scatter',                            // 散点图表示项目
-            coordinateSystem: 'geo',                    // 使用地理坐标系
-            data: filteredData.map(item => ({
-                name: item.hotelName,                   // 酒店名称作为标注
-                value: item.coordinates.split(',').map(Number).concat(item.supply) // [经度, 纬度, 供货数]
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: filteredData.slice(0, 50).map(item => ({
+                name: item.hotelName,
+                value: item.coordinates.split(',').map(Number).concat(item.supply)
             })),
-            symbolSize: 15,                             // 星星大小
-            itemStyle: { color: '#ffd700' }             // 金色星星
+            symbol: 'image://./resources/images/star.png',
+            symbolSize: 16,
+            animation: false
         }]
-    };
-
-    if (currentLevel === 'province' && provinceCenters[currentRegion]) {
-        option.geo.center = provinceCenters[currentRegion];
-        option.geo.zoom = 1;
-    }
-
-    mapChart.setOption(option);
+    }, {
+        notMerge: true
+    });
 }
 
-// 更新统计数据
+// 更新统计（保持不变）
 function updateStats(filteredData) {
-    document.getElementById('hotelCount').textContent = filteredData.length; // 总酒店数
-    document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0); // 总供货数
+    document.getElementById('hotelCount').textContent = filteredData.length;
+    document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0);
 }
 
-// 更新饼状图（尺寸分布）
+// 更新饼状图（按 tv_model 统计）
 function updateChart(filteredData) {
-    const sizeData = filteredData.reduce((acc, item) => {
-        acc[item.size] = (acc[item.size] || 0) + item.supply; // 按尺寸统计供货数
+    const modelData = filteredData.reduce((acc, item) => {
+        acc[item.model] = (acc[item.model] || 0) + item.supply; // 按电视机型号统计
         return acc;
     }, {});
     chart.setOption({
         title: { text: '尺寸占比', left: 'center', textStyle: { fontSize: 24 } },
-        series: [{
-            type: 'pie',                                // 饼状图
-            radius: '50%',                              // 饼图半径
-            data: Object.entries(sizeData).map(([name, value]) => ({ name, value })),
-            label: { fontSize: 18 }                     // 标签字体大小
-        }]
+        series: [{ type: 'pie', radius: '50%', data: Object.entries(modelData).map(([name, value]) => ({ name, value })), label: { fontSize: 18 } }]
     });
 }
 
 // 更新索引信息（品牌布局和尺寸数量）
 function updateIndex(filteredData) {
     const selectedBrand = document.getElementById('brandFilter').value;
-    const selectedSize = document.getElementById('sizeFilter').value;
+    const selectedModel = document.getElementById('modelFilter').value;
 
     if (selectedBrand) {
         const brandData = filteredData.filter(item => item.brand === selectedBrand);
@@ -117,102 +109,93 @@ function updateIndex(filteredData) {
         document.getElementById('brandIndex').textContent = '未选择品牌';
     }
 
-    if (selectedSize) {
-        const sizeData = filteredData.filter(item => item.size === selectedSize);
-        document.getElementById('sizeIndex').textContent = `${sizeData.reduce((sum, item) => sum + item.supply, 0)} 台`;
+    if (selectedModel) {
+        const modelData = filteredData.filter(item => item.model === selectedModel);
+        document.getElementById('modelIndex').textContent = `${modelData.reduce((sum, item) => sum + item.supply, 0)} 台`;
     } else {
-        document.getElementById('sizeIndex').textContent = '未选择尺寸';
+        document.getElementById('modelIndex').textContent = '未选择尺寸';
     }
 }
 
 // 更新所有视图
 function updateAll(data) {
     const selectedBrand = document.getElementById('brandFilter').value;
-    const selectedSize = document.getElementById('sizeFilter').value;
+    const selectedModel = document.getElementById('modelFilter').value;
+    const selectedProvince = document.getElementById('provinceFilter').value;
     let filtered = data;
 
     // 按品牌和尺寸筛选
-    if (selectedBrand || selectedSize) {
+    if (selectedBrand || selectedModel || selectedProvince) {
         filtered = data.filter(item =>
-            (!selectedBrand || item.brand === selectedBrand) &&
-            (!selectedSize || item.size === selectedSize)
+            (selectedBrand === '所有品牌' || item.brand === selectedBrand) &&
+            (selectedModel === '所有型号' || item.model === selectedModel) &&
+            (selectedProvince == '全国' || item.province.includes(selectedProvince))
         );
     }
 
-    // 按地图层级过滤
-    if (currentLevel === 'province') {
-        filtered = filtered.filter(item => item.province === currentRegion);
-    } else if (currentLevel === 'city') {
-        filtered = filtered.filter(item => item.city === currentRegion);
+    if (currentMap !== 'china') {
+        // 按地图层级过滤
+        filtered = filtered.filter(item => chineseProvince2MapProvince(item.province) === currentMap);
     }
+    
     if (filtered.length < 1) {
         alert(`暂无销售记录`);
         return
     }
 
-    updateMap(filtered);
-    updateStats(filtered);
-    updateChart(filtered);
-    updateIndex(filtered);
+    try {
+        updateMap(filtered);
+        updateStats(filtered);
+        updateChart(filtered);
+        updateIndex(filtered);
+    } catch (e) {
+        alert(`updateAll: ${e}`)
+        throw e
+    }
+}
+function chineseProvince2MapProvince(p) {
+    const map_key = window.mapData.chineseProvince2MapProvince[p];
+    return map_key;
 }
 
-// 点击地图切换层级
+function onChooseProvince() {
+    const selectedProvince = document.getElementById('provinceFilter').value;
+    currentMap = chineseProvince2MapProvince(selectedProvince);
+    updateAll(window.projectData)
+}
+
+// 点击地图切换层级（保持不变）
 mapChart.on('click', params => {
     if (params.componentType === 'geo') {
         const regionName = params.name;
-        if (currentLevel === 'china') {
-            currentLevel = 'province';                  // 切换到省份层级
-            currentRegion = regionName;
-            fetchProvinceMap(regionName);
-        } else if (currentLevel === 'province') {
-            currentLevel = 'city';                      // 切换到城市层级
-            currentRegion = regionName;
-            fetchCityMap(regionName);
+        currentMap = chineseProvince2MapProvince(regionName);
+        document.getElementById('provinceFilter').value = regionName;
+        if (!currentMap) {
+            alert(`${regionName} 没有对应的地图`)
+            return
         }
+        updateAll(window.projectData)
     }
 });
 
-// 加载省份地图
-function fetchProvinceMap(province) {
-    fetch(`map/province/${province}.json`)            // 从 province 文件夹加载
-        .then(res => res.json())
-        .then(geoJson => {
-            mapData.provinces[province] = geoJson;    // 存储省份地图
-            echarts.registerMap(province, geoJson);   // 注册省份地图
-            updateAll(window.projectData);            // 更新视图
-        })
-        .catch(() => {
-            alert(`未找到 map/province/${province}.json，恢复全国视图`);
-            currentLevel = 'china';
-            currentRegion = null;
-            updateAll(window.projectData);
-        });
-}
-
-// 加载城市地图（占位，未实现）
-function fetchCityMap(city) {
-    // 假设城市地图也在 map/province/ 下，可根据需要调整
-    fetch(`map/province/${city}.json`)
-        .then(res => res.json())
-        .then(geoJson => {
-            mapData.cities[city] = geoJson;
-            echarts.registerMap(city, geoJson);
-            updateAll(window.projectData);
-        })
-        .catch(() => {
-            alert(`未找到 map/province/${city}.json，保持省视图`);
-            currentLevel = 'province';
-            updateAll(window.projectData);
-        });
-}
-
-// 返回全国视图
-document.getElementById('resetMap').addEventListener('click', () => {
-    currentLevel = 'china';
-    currentRegion = null;
-    updateAll(window.projectData);
-});
-
-// 绑定筛选事件
+// 绑定筛选事件（保持不变）
 document.getElementById('brandFilter').addEventListener('change', () => updateAll(window.projectData));
-document.getElementById('sizeFilter').addEventListener('change', () => updateAll(window.projectData));
+document.getElementById('modelFilter').addEventListener('change', () => updateAll(window.projectData));
+document.getElementById('provinceFilter').addEventListener('change', () => onChooseProvince());
+
+async function initApp() {
+    const builtinFilters = await fetch('data/filters.json')
+    if (!builtinFilters.ok) {
+        throw new Error('failed to load filters.json');
+    }
+    const allFilters = await builtinFilters.json()
+    initFilters(allFilters)
+    await window.loadMapData (allFilters['provinces'].slice(1))
+
+    // 初始化（预加载数据）
+    loadData(data => {
+        updateAll(data);
+    });
+}
+
+initApp()

@@ -1,0 +1,123 @@
+[
+  {
+    "hotelName": "都江堰朵兰达",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H55E",
+    "coordinates": "103.63275721730876,30.992761922420605",
+    "supply": 32,
+    "province": "四川省",
+    "city": "成都市",
+    "location": "四川省 成都市 都江堰市 幸福街道 走马河街368号"
+  },
+  {
+    "hotelName": "朵兰达酒店(成都双流航空港店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "104.01746546314749,30.556313028834783",
+    "supply": 37,
+    "province": "四川省",
+    "city": "成都市",
+    "location": "四川省 成都市 双流区 西航港街道 会缘汽配城2期6栋"
+  },
+  {
+    "hotelName": "朵兰达酒店(成都环球中心店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "104.07267136724649,30.558409445347205",
+    "supply": 49,
+    "province": "四川省",
+    "city": "成都市",
+    "location": "四川省 成都市 武侯区 天府二街138号蜀都中心一期3栋34、35楼"
+  },
+  {
+    "hotelName": "都江堰朵兰达南桥店",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "103.6268040748297,31.00241353108054",
+    "supply": 64,
+    "province": "四川省",
+    "city": "成都市",
+    "location": "成都市 都江堰市 灌口街道南桥社区幸福路89号"
+  },
+  {
+    "hotelName": " 朵兰达酒店(阿坝九寨沟沟口店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "55H69K",
+    "coordinates": "103.91379696492123,33.27661210624007",
+    "supply": 71,
+    "province": "四川省",
+    "city": "阿坝藏族羌族自治州",
+    "location": "四川省 阿坝藏族羌族自治州 九寨沟县 漳扎镇 彭丰村82号九寨沟瑞达酒店"
+  },
+  {
+    "hotelName": "巫家坝朵兰达酒店",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "102.73257704050414,24.98324004332996",
+    "supply": 53,
+    "province": "云南省",
+    "city": "昆明市",
+    "location": "云南省 昆明市 官渡区 关上街道 巫家坝万科翡翠公馆二期9栋16层"
+  },
+  {
+    "hotelName": "北京西站朵兰达",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "116.26641363941606,39.91428018600994",
+    "supply": 74,
+    "province": "北京",
+    "city": "北京市",
+    "location": "北京市 北京市 海淀区 永定路街道 采石路5号御石泉商务楼"
+  },
+  {
+    "hotelName": "朵兰达酒店(长沙星沙万象汇店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "113.09262641750479,28.252688739242373",
+    "supply": 66,
+    "province": "湖南省",
+    "city": "长沙市",
+    "location": "湖南省 长沙市 长沙县 星沙街道 星沙北路2号"
+  },
+  {
+    "hotelName": " 朵兰达酒店(长沙王府井店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "50H55E",
+    "coordinates": "112.91863865384549,28.225697904797304",
+    "supply": 40,
+    "province": "湖南省",
+    "city": "长沙市",
+    "location": "湖南省 长沙市 岳麓区 西湖街道 金星中路319号金谷大厦21楼"
+  },
+  {
+    "hotelName": "邵阳朵兰达酒店",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "111.44430506659454,27.22882874935493",
+    "supply": 30,
+    "province": "湖南省",
+    "city": "邵阳市",
+    "location": " 湖南省 邵阳市 大祥区 百春园街道 城西街道迎春路和雪峰南路交汇处朵兰达酒店"
+  },
+  {
+    "hotelName": "朵兰达酒店(晋中平遥古城店)",
+    "brand": "朵兰达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "112.19403238624328,37.193364752384085",
+    "supply": 32,
+    "province": "山西省",
+    "city": "晋中市",
+    "location": "山西省 晋中市 平遥县 古陶镇 南外环与城南路交叉口（原 桂源亨宾馆"
+  }
+]
