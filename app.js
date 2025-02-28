@@ -110,31 +110,46 @@ function updateChart(filteredData) {
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} : {c} ({d}%)' // 工具提示显示名称、值和百分比
+            formatter: '{a} <br/>{b} : {c}' // 工具提示显示名称和值
+        },
+        xAxis: {
+            type: 'category',
+            data: chartData.map(item => item.name), // X轴使用数据的名称
+            axisLabel: {
+                fontSize: 12,
+                rotate: 45 // 如果名称较长，可旋转标签
+            }
+        },
+        yAxis: {
+            type: 'value',
+            axisLabel: {
+                fontSize: 12
+            }
         },
         series: [{
             name: '尺寸占比',
-            type: 'pie',                // 使用饼图
-            radius: ['40%', '70%'],     // 设置为环形图，内半径40%，外半径70%
-            avoidLabelOverlap: true,    // 避免标签重叠
-            label: {
-                show: true,             // 显示标签
-                formatter: '{b}: {d}%', // 显示名称和百分比
-                fontSize: 12            // 标签字体大小，适配多类别
-            },
-            labelLine: {
-                show: true,             // 显示标签连接线
-                length: 20,             // 连接线长度
-                length2: 30             // 第二段连接线长度
-            },
+            type: 'bar',                // 改为柱形图
             data: chartData,           // 使用计算后的数据
+            barWidth: '40%',           // 柱子宽度
+            label: {
+                show: true,            // 显示标签
+                position: 'top',       // 标签显示在柱子上方
+                formatter: '{c}',      // 显示值
+                fontSize: 12
+            },
+            itemStyle: { // 添加到这里，用于正常状态的颜色
+                color: function(params) {
+                    const colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de'];
+                    return colors[params.dataIndex % colors.length];
+                }
+            },
             emphasis: {
                 itemStyle: {
                     shadowBlur: 10,    // 高亮时添加阴影
                     shadowOffsetX: 0,
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
-            }
+            },
         }]
     });
 }
@@ -148,14 +163,14 @@ function updateIndex(filteredData) {
     if (selectedBrand !== '所有品牌') {
         brandData = filteredData.filter(item => item.brand === selectedBrand);
     }
-    const provinces = [...new Set(brandData.map(item => item.province.includes('省') ? item.province.slice(0, -1) : item.province))].join(', ');
-    document.getElementById('brandIndex').textContent = `${brandData.length} 个项目，分布: ${provinces || '无'}`;
+    const provinces = [...new Set(brandData.map(item => item.brand))].join(', ');
+    document.getElementById('brandIndex').textContent = provinces;
 
-    let modelData = filteredData;
-    if (selectedModel !== '所有型号') {
-        modelData = filteredData.filter(item => item.model === selectedModel);
-    }
-    document.getElementById('modelIndex').textContent = `${modelData.reduce((sum, item) => sum + item.supply, 0)} 台`;
+    // let modelData = filteredData;
+    // if (selectedModel !== '所有型号') {
+    //     modelData = filteredData.filter(item => item.model === selectedModel);
+    // }
+    // document.getElementById('modelIndex').textContent = `${modelData.reduce((sum, item) => sum + item.supply, 0)} 台`;
 }
 
 // 更新所有视图
