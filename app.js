@@ -205,7 +205,11 @@ function chineseProvince2MapProvince(p) {
 
 function onChooseProvince() {
     const selectedProvince = document.getElementById('provinceFilter').value;
-    currentMap = chineseProvince2MapProvince(selectedProvince);
+    if (selectedProvince == '全国') {
+        currentMap = 'china';
+    } else {
+        currentMap = chineseProvince2MapProvince(selectedProvince);
+    }
     updateAll(window.projectData)
 }
 
