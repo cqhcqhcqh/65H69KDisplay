@@ -39,7 +39,7 @@ select, button {
 
 #stats {
     position: relative;      /* 宽屏时跟随 flex 布局 */
-    width: 30%;              /* 右侧占 30% 宽度 */
+    width: 35%;              /* 右侧占 30% 宽度 */
     height: calc(100vh - 80px); /* 与地图同高 */
     padding: 15px;
     background: white;

@@ -245,4 +245,9 @@ async function initApp() {
     });
 }
 
-initApp()
+async function initLocalApp() {
+    initFilters(filters)
+    window.projectData = saleRecords;
+    updateAll(saleRecords);
+}
+initLocalApp()
