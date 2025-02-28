@@ -16,7 +16,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "117.25039593571368,34.29722718133987",
-    "supply": 32,
+    "supply": 64,
     "province": "江苏省",
     "city": "徐州市",
     "location": "江苏省 徐州市 泉山区 金山街道 洞山路5号"
@@ -143,7 +143,7 @@ const saleRecords = [
     "location": "广东省 东莞市 长安镇 长安镇 横诚路1号金龙中心"
   },
   {
-    "hotelName": "同驿美豪酒店(佛山南海桂城千灯湖店)",
+    "hotelName": "美豪酒店(佛山南海桂城千灯湖店)",
     "brand": "美豪",
     "subbrand": null,
     "model": "55H55E",
@@ -162,7 +162,7 @@ const saleRecords = [
     "supply": 63,
     "province": "广东省",
     "city": "佛山市",
-    "location": "广东省 佛山市 南海区 桂城街道 季华七路25号B座美豪酒店5楼"
+    "location": "广东省佛山市禅城区祖庙街道 季华七路25号B座美豪酒店"
   },
   {
     "hotelName": "上海外滩美豪雅致酒店",
@@ -550,15 +550,37 @@ const saleRecords = [
     "location": "山西省 长治市 潞城区 潞华街道 中华西街155号潞城万达悦华酒店"
   },
   {
-    "hotelName": "新疆万达悦华样机",
+    "hotelName": "若羌万达悦华酒店",
     "brand": "万达",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "88.17141232140021,39.02975787704273",
-    "supply": 4,
+    "supply": 8,
     "province": "新疆",
-    "city": "长治市",
+    "city": "巴音郭楞蒙古自治州",
     "location": "新疆巴音郭楞蒙古自治州若羌县铁干里克镇建设路613号万达悦华酒店"
+  },
+  {
+    "hotelName": "若羌万达悦华酒店",
+    "brand": "万达",
+    "subbrand": null,
+    "model": "50H55E",
+    "coordinates": "88.17141232140021,39.02975787704273",
+    "supply": 16,
+    "province": "新疆",
+    "city": "巴音郭楞蒙古自治州",
+    "location": "新疆巴音郭楞蒙古自治州若羌县铁干里克镇建设路613号万达悦华酒店"
+  },
+  {
+    "hotelName": "平遥万达美华酒店",
+    "brand": "万达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "88.17141232140021,39.02975787704273",
+    "supply": 103,
+    "province": "新疆",
+    "city": "巴音郭楞蒙古自治州",
+    "location": "新疆维吾尔自治区 巴音郭楞蒙古自治州 若羌县 铁干里克镇 万达悦华酒店"
   },
   {
     "hotelName": "新疆吐鲁番万达美华",
@@ -567,6 +589,17 @@ const saleRecords = [
     "model": "65H67K",
     "coordinates": "89.20242953487806,42.95259339904096",
     "supply": 181,
+    "province": "新疆",
+    "city": "吐鲁番市",
+    "location": "新疆 吐鲁番市 高昌区 高昌路街道 文化路高昌华府万达美华酒店"
+  },
+  {
+    "hotelName": "新疆吐鲁番万达美华",
+    "brand": "万达",
+    "subbrand": null,
+    "model": "65H69K",
+    "coordinates": "89.20242953487806,42.95259339904096",
+    "supply": 4,
     "province": "新疆",
     "city": "吐鲁番市",
     "location": "新疆 吐鲁番市 高昌区 高昌路街道 文化路高昌华府万达美华酒店"
@@ -583,17 +616,6 @@ const saleRecords = [
     "location": "新疆阿拉尔市宽窄新街阿拉尔万达美华酒店"
   },
   {
-    "hotelName": "吐鲁番万达美华酒店",
-    "brand": "万达",
-    "subbrand": null,
-    "model": "65H69K",
-    "coordinates": "89.20242953487806,42.95259339904096",
-    "supply": 4,
-    "province": "新疆",
-    "city": "维吾尔自治区 ",
-    "location": "新疆维吾尔自治区 吐鲁番市 高昌区 高昌路街道 高昌路街道文化路高昌华府万达美华酒店"
-  },
-  {
     "hotelName": "喀什东城万达悦华酒店",
     "brand": "万达",
     "subbrand": null,
@@ -601,41 +623,8 @@ const saleRecords = [
     "coordinates": "76.06556996202639,39.460315173459094",
     "supply": 106,
     "province": "新疆",
-    "city": "维吾尔自治区 ",
+    "city": "喀什巿",
     "location": "新疆维吾尔自治区喀什地区喀什巿西泓世嘉小区万达悦华酒店"
-  },
-  {
-    "hotelName": "若羌万达悦华酒店（增补）",
-    "brand": "万达",
-    "subbrand": null,
-    "model": "50H55E",
-    "coordinates": "88.17141232140021,39.02975787704273",
-    "supply": 16,
-    "province": "新疆",
-    "city": "维吾尔自治区 ",
-    "location": "新疆维吾尔自治区 巴音郭楞蒙古自治州 若羌县 铁干里克镇 万达悦华酒店"
-  },
-  {
-    "hotelName": "平遥万达美华酒店",
-    "brand": "万达",
-    "subbrand": null,
-    "model": "65H69K",
-    "coordinates": "88.17141232140021,39.02975787704273",
-    "supply": 103,
-    "province": "新疆",
-    "city": " 巴音郭楞蒙古自治州",
-    "location": "新疆维吾尔自治区 巴音郭楞蒙古自治州 若羌县 铁干里克镇 万达悦华酒店"
-  },
-  {
-    "hotelName": "新疆万达悦华样机",
-    "brand": "万达",
-    "subbrand": null,
-    "model": "65H55E",
-    "coordinates": "88.17141232140021,39.02975787704273",
-    "supply": 4,
-    "province": "新疆",
-    "city": " 巴音郭楞蒙古自治州",
-    "location": "新疆巴音郭楞蒙古自治州若羌县铁干里克镇建设路613号万达悦华酒店"
   },
   {
     "hotelName": "平遥万达美华酒店",
@@ -1292,13 +1281,13 @@ const saleRecords = [
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.80873689881155,31.969959500977723",
-    "supply": 33,
+    "supply": 66,
     "province": "江苏省",
     "city": "南京市",
     "location": "江苏省南京市江宁区东山街道城际空间站F-2座美程里酒店"
   },
   {
-    "hotelName": "南京金陵状元楼大酒店二批次",
+    "hotelName": "南京金陵状元楼大酒店",
     "brand": "其他",
     "subbrand": null,
     "model": "65H69K",
@@ -1358,7 +1347,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "118.64648603556593,32.073258052338886",
-    "supply": null,
+    "supply": 201,
     "province": "江苏省",
     "city": "南京市",
     "location": "江苏省 南京市 浦口区 江浦街道 龙华路1号"
@@ -1439,17 +1428,6 @@ const saleRecords = [
     "province": "江苏省",
     "city": "南京市",
     "location": "南京市溧水经济开发区群力大道88号颐瑞健康"
-  },
-  {
-    "hotelName": "南京南站美程里",
-    "brand": "其他",
-    "subbrand": null,
-    "model": "65H55E",
-    "coordinates": "118.80873689881155,31.969959500977723",
-    "supply": 33,
-    "province": "江苏省",
-    "city": "南京市",
-    "location": "南京市江宁区东山街道城际空间站F-2座美程里酒店"
   },
   {
     "hotelName": "五D枕酒店",
@@ -1584,7 +1562,7 @@ const saleRecords = [
     "location": "江苏省镇江市润州区七里甸街道北府路88号喜来登酒店"
   },
   {
-    "hotelName": "镇江喜来登酒店二批次",
+    "hotelName": "镇江喜来登",
     "brand": "其他",
     "subbrand": null,
     "model": "55H69K",
@@ -1592,7 +1570,7 @@ const saleRecords = [
     "supply": 42,
     "province": "江苏省",
     "city": "镇江市",
-    "location": "江苏省 镇江市 润州区 七里甸街道 北府路88号喜来登酒店"
+    "location": "江苏省镇江市润州区七里甸街道北府路88号喜来登酒店"
   },
   {
     "hotelName": "镇江艺龙",
@@ -1622,7 +1600,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "119.58902734275505,31.98906341922115",
-    "supply": 40,
+    "supply": 120,
     "province": "江苏省",
     "city": "镇江市",
     "location": "江苏省 镇江市 丹阳市 云阳街道 丹凤南路999号水中仙东雅国际酒店有限公司采购部"
@@ -1875,7 +1853,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "113.32597888043246,22.75125747348189",
-    "supply": 60,
+    "supply": 102,
     "province": "广东省",
     "city": "佛山市",
     "location": " 广东省 佛山市 顺德区 容桂街道 兴华东路21号（廷泊酒店）"
@@ -2128,7 +2106,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.1450370432558,29.61299504348213",
-    "supply": 192,
+    "supply": 268,
     "province": "浙江省",
     "city": "杭州市",
     "location": "浙江省 杭州市 淳安县 千岛湖镇 千岛湖阿尔法城千岛湖酒店"
@@ -2172,7 +2150,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "55H68K",
     "coordinates": "119.75821194009241,28.302858513838856",
-    "supply": 150,
+    "supply": 210,
     "province": "浙江省",
     "city": "丽水市",
     "location": "浙江省 丽水市 莲都区 大港头镇 滨水花苑51幢"
@@ -2229,7 +2207,7 @@ const saleRecords = [
     "coordinates": "116.81137974992986,32.5631060188275",
     "supply": 55,
     "province": "安徽省",
-    "city": "滁州市",
+    "city": "淮南市",
     "location": "安徽淮南寿县阳光欧洲城东门168号商铺悦心酒店"
   },
   {
@@ -2240,7 +2218,7 @@ const saleRecords = [
     "coordinates": "116.81137974992986,32.5631060188275",
     "supply": 54,
     "province": "安徽省",
-    "city": "滁州市",
+    "city": "淮南市",
     "location": "安徽淮南寿县阳光欧洲城东门168号商铺悦心酒店"
   },
   {
@@ -2365,7 +2343,7 @@ const saleRecords = [
     "location": "湖南省 衡阳市 珠晖区 衡州路街道 衡州大道1号"
   },
   {
-    "hotelName": "上海格美增补",
+    "hotelName": "上海格美",
     "brand": "其他",
     "subbrand": null,
     "model": "55H55E",
@@ -2392,7 +2370,7 @@ const saleRecords = [
     "subbrand": null,
     "model": "55H5K",
     "coordinates": "121.38162365572576,31.224440183272744",
-    "supply": 106,
+    "supply": 211,
     "province": "上海",
     "city": "上海市",
     "location": "上海市 上海市 长宁区 北新泾街道 蒲松北路60号1-6层"
@@ -2457,11 +2435,11 @@ const saleRecords = [
     "brand": "其他",
     "subbrand": null,
     "model": "65H69K",
-    "coordinates": "116.44,35.46",
+    "coordinates": "116.97382635394608,35.573808069299595",
     "supply": 49,
     "province": "山东",
     "city": "济宁市",
-    "location": "山东省 济宁市 任城区 古槐街道 蓼和景观带11#商业楼"
+    "location": "曲阜鲁城街道蓼河公园名城御府西门北50米"
   },
   {
     "hotelName": "山东烟台亚朵酒店",

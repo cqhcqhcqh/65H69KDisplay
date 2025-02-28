@@ -46,11 +46,11 @@ db.all('SELECT * FROM hotels', (err, rows) => {
     filters = {'provinces': ['全国'].concat(Array.from(provinces)), 
                'brands': ['所有品牌'].concat(Array.from(brands)), 
                'models': ['所有型号'].concat(Array.from(models))}
-    fs.writeFileSync('data/filters.json', JSON.stringify(filters, null, 2));
+    fs.writeFileSync('data/filters.js', 'const filters = ' + JSON.stringify(filters, null, 2) + ';');
     console.log('已生成 filters.json');
 
     // 保存为 data.json
-    fs.writeFileSync('data/data.json', JSON.stringify(data, null, 2));
+    fs.writeFileSync('data/data.js', 'const saleRecords = ' + JSON.stringify(data, null, 2)) + ';';
     console.log('已生成 data.json');
     db.close();
 });

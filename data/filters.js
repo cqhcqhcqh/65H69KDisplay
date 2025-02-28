@@ -68,4 +68,4 @@ const filters = {
     "65C240MF",
     "43H3F"
   ]
-}
+};

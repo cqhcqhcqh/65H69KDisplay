@@ -1,0 +1,6 @@
+# 1. 如果 .xlsx 表格有更新，
+## 执行 py/read_excel.py 生成 hotels.db
+## 利用 data/generate-data.js 会读取 hotels.db 来更新/生成 data.js 和 filters.js 文件
+
+# 2. 如果 map 文件夹下的 china.js 和 province/*.js 地图数据有更新
+## 执行 merge_provinces.py 来生成 provinces.js
