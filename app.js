@@ -148,7 +148,7 @@ function updateIndex(filteredData) {
     if (selectedBrand !== '所有品牌') {
         brandData = filteredData.filter(item => item.brand === selectedBrand);
     }
-    const provinces = [...new Set(brandData.map(item => item.province))].join(', ');
+    const provinces = [...new Set(brandData.map(item => item.province.includes('省') ? item.province.slice(0, -1) : item.province))].join(', ');
     document.getElementById('brandIndex').textContent = `${brandData.length} 个项目，分布: ${provinces || '无'}`;
 
     let modelData = filteredData;
@@ -194,9 +194,13 @@ function updateAll(data) {
         throw e
     }
 }
+// function chineseProvince2MapProvince(p) {
+//     const map_key = window.mapData.chineseProvince2MapProvince[p];
+//     return map_key;
+// }
 function chineseProvince2MapProvince(p) {
-    const map_key = window.mapData.chineseProvince2MapProvince[p];
-    return map_key;
+    const key_map = p.includes('省') ? p.slice(0, -1) : p
+    return key_map;;
 }
 
 function onChooseProvince() {
