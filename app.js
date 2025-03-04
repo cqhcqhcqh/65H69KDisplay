@@ -313,7 +313,7 @@ document.getElementById('brandFilter').addEventListener('change', () => updateAl
 document.getElementById('modelFilter').addEventListener('change', () => updateAll(window.projectData));
 document.getElementById('provinceFilter').addEventListener('change', () => onChooseProvince());
 // 返回全国视图
-document.getElementById('resetMap').addEventListener('click', () => {
+document.getElementById('title').addEventListener('click', () => {
     currentMap = 'china';
     document.getElementById('provinceFilter').value = '全国'
     updateAll(window.projectData);
