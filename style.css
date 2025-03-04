@@ -58,6 +58,7 @@ select, button {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     display: block; /* 或使用 block 并配合内容 */
     z-index: 10;
+    border-radius: 8px;
 }
 
 .brand-item {
@@ -74,9 +75,10 @@ select, button {
 }
 
 .brand-item.selected {
+    color: #ffd700;
     background: #e0f0ff;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    border-color: #e0f0ff;
+    box-shadow: 0 0 5px #e0f0ff;
 }
 
 #stats {
