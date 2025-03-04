@@ -7,16 +7,17 @@ body {
     flex-direction: row;     /* 宽屏时水平排列 */
     height: 100vh;           /* 占满视口高度 */
     overflow: hidden; /* 防止地图内部滚动 */
+    width: 100vw;
+    height: 100vh;
 }
 
 #map {
-    width: 70%;              /* 地图偏左，占 70% 宽度 */
-    height: calc(100vh - 108px); /* 留出顶部控件空间 */
+    flex: 1;
     position: relative;
-    top: 108px;
 }
 
 #controls {
+    visibility: hidden;
     position: fixed;
     top: 10px;
     left: 10px;
@@ -37,15 +38,59 @@ select, button {
     cursor: pointer;
 }
 
-#stats {
-    position: relative;      /* 宽屏时跟随 flex 布局 */
-    width: 35%;              /* 右侧占 30% 宽度 */
-    height: calc(100vh - 80px); /* 与地图同高 */
+#title {
+    position: absolute; /* 固定在地图顶部 */
+    top: 10px; /* 距离顶部适当间距 */
+    left: 50%; /* 水平居中 */
+    transform: translateX(-50%); /* 精确居中 */
+    color: #ffd700;
+    font-size: 46px;
+}
+
+#brand-list {
+    position: absolute;      /* 宽屏时跟随 flex 布局 */
+    top: 20px;
+    left: 20px;
+    width: 200px;
+    max-height: 1000px;
     padding: 15px;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    overflow-y: auto;        /* 内容超长时可滚动 */
-    top: 108px;               /* 对齐地图顶部 */
+    display: block; /* 或使用 block 并配合内容 */
+    z-index: 10;
+}
+
+.brand-item {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.brand-item:hover {
+    background: #f0f0f0;
+}
+
+.brand-item.selected {
+    background: #e0f0ff;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#stats {
+    position: absolute;      /* 宽屏时跟随 flex 布局 */
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    min-height: 200px;
+    padding: 15px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    display: block; /* 或使用 block 并配合内容 */
+    z-index: 10;
+    border-radius: 8px;
 }
 
 /* 突出数字（span），保持标题（strong）清晰 */

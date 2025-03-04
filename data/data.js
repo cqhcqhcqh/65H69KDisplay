@@ -1277,7 +1277,7 @@ const saleRecords = [
   },
   {
     "hotelName": "南京南站美程里",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.80873689881155,31.969959500977723",
@@ -1288,7 +1288,7 @@ const saleRecords = [
   },
   {
     "hotelName": "南京金陵状元楼大酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "118.79451492597758,32.028418565644735",
@@ -1299,7 +1299,7 @@ const saleRecords = [
   },
   {
     "hotelName": "同驿 艺龙安悦高淳",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "118.94253896553946,31.365208168874826",
@@ -1310,7 +1310,7 @@ const saleRecords = [
   },
   {
     "hotelName": "东方万汇城",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.66260397200928,32.06741699787537",
@@ -1321,7 +1321,7 @@ const saleRecords = [
   },
   {
     "hotelName": "南站轻奢酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.80521572087353,31.975418523166073",
@@ -1332,7 +1332,7 @@ const saleRecords = [
   },
   {
     "hotelName": "南京恬觅酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "75H55E",
     "coordinates": "118.84700983387802,32.04580107882802",
@@ -1343,7 +1343,7 @@ const saleRecords = [
   },
   {
     "hotelName": " 江北馨乐庭公寓项目",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "118.64648603556593,32.073258052338886",
@@ -1354,7 +1354,7 @@ const saleRecords = [
   },
   {
     "hotelName": "浦口艺龙酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "118.69274625407438,32.108856017185225",
@@ -1365,7 +1365,7 @@ const saleRecords = [
   },
   {
     "hotelName": "浦口艺龙酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.69274625407438,32.108856017185225",
@@ -1376,7 +1376,7 @@ const saleRecords = [
   },
   {
     "hotelName": "咖居精选酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "118.7686206408386,31.96186240962243",
@@ -1387,7 +1387,7 @@ const saleRecords = [
   },
   {
     "hotelName": "奥艺酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "118.86699677215282,32.03927974604833",
@@ -1398,7 +1398,7 @@ const saleRecords = [
   },
   {
     "hotelName": "南京虹桥饭店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "118.77266211732801,32.08127652508717",
@@ -1409,7 +1409,7 @@ const saleRecords = [
   },
   {
     "hotelName": "老门东金陵",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "118.7952151551226,32.01641610265445",
@@ -1420,7 +1420,7 @@ const saleRecords = [
   },
   {
     "hotelName": "溧水颐瑞期颐酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "119.02116333496139,31.72801648596843",
@@ -1431,7 +1431,7 @@ const saleRecords = [
   },
   {
     "hotelName": "五D枕酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "118.8160657243147,32.037672717099845",
@@ -1442,7 +1442,7 @@ const saleRecords = [
   },
   {
     "hotelName": "江北馨乐庭公寓项目",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "118.6477785175337,32.07335160222217",
@@ -1453,7 +1453,7 @@ const saleRecords = [
   },
   {
     "hotelName": "星程酒店项目",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55V1K-R",
     "coordinates": "118.80434400520666,31.874622334005174",
@@ -1464,7 +1464,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州美程里",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "120.72830384476788,31.266172267165064",
@@ -1475,7 +1475,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州苏易居酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "120.78856541227705,31.0532687130459",
@@ -1486,7 +1486,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州南林金陵",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "120.63559179918573,31.3059577885454",
@@ -1497,7 +1497,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州相城永昌汇精品酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "120.60978464968125,31.468131753383616",
@@ -1508,7 +1508,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州艾豪森酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "120.63658047423002,31.314258524701536",
@@ -1519,7 +1519,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州象之屋酒吧酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "120.62109332791579,31.32645699841686",
@@ -1530,7 +1530,7 @@ const saleRecords = [
   },
   {
     "hotelName": "苏州高铁新城亚朵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "120.67336860011905,31.465371603027744",
@@ -1541,7 +1541,7 @@ const saleRecords = [
   },
   {
     "hotelName": "艺龙安悦酒店(苏州火车站北广场店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H5K",
     "coordinates": "120.61133189109162,31.336492326170184",
@@ -1552,7 +1552,7 @@ const saleRecords = [
   },
   {
     "hotelName": "镇江喜来登",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "119.44231294279616,32.19978108312362",
@@ -1563,7 +1563,7 @@ const saleRecords = [
   },
   {
     "hotelName": "镇江喜来登",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "119.44231294279616,32.19978108312362",
@@ -1574,7 +1574,7 @@ const saleRecords = [
   },
   {
     "hotelName": "镇江艺龙",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "119.51816316514217,32.17322540206417",
@@ -1585,7 +1585,7 @@ const saleRecords = [
   },
   {
     "hotelName": "句容格美",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "119.17642214743952,31.960817462416177",
@@ -1596,7 +1596,7 @@ const saleRecords = [
   },
   {
     "hotelName": "丹阳水中仙酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "119.58902734275505,31.98906341922115",
@@ -1607,7 +1607,7 @@ const saleRecords = [
   },
   {
     "hotelName": "句容格美酒店二批次",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "119.17642214743952,31.960817462416177",
@@ -1618,7 +1618,7 @@ const saleRecords = [
   },
   {
     "hotelName": "扬州水晶酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "119.42689227108968,32.39986258211633",
@@ -1629,7 +1629,7 @@ const saleRecords = [
   },
   {
     "hotelName": "扬州艺龙",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "119.39863759839268,32.387370903384685",
@@ -1640,7 +1640,7 @@ const saleRecords = [
   },
   {
     "hotelName": "徐州怡程酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "117.19878900280986,34.27137302318431",
@@ -1651,7 +1651,7 @@ const saleRecords = [
   },
   {
     "hotelName": "徐州沛县君澜酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "116.95237957938701,34.763709945976714",
@@ -1662,7 +1662,7 @@ const saleRecords = [
   },
   {
     "hotelName": "新沂君澜大饭店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "118.35654400848516,34.35738032131796",
@@ -1673,7 +1673,7 @@ const saleRecords = [
   },
   {
     "hotelName": "连云港卡尔顿酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "119.21272231377553,34.60338180080494",
@@ -1684,7 +1684,7 @@ const saleRecords = [
   },
   {
     "hotelName": "连云港达峰酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.28222744498237,34.29805490313984",
@@ -1695,7 +1695,7 @@ const saleRecords = [
   },
   {
     "hotelName": "盱眙柏曼酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "118.57257839888526,32.997413548982685",
@@ -1706,7 +1706,7 @@ const saleRecords = [
   },
   {
     "hotelName": "淮安金湖君澜",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "119.30476072005575,33.085567825739034",
@@ -1717,7 +1717,7 @@ const saleRecords = [
   },
   {
     "hotelName": "泰兴Z酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "119.85032674144674,32.894263804545425",
@@ -1728,7 +1728,7 @@ const saleRecords = [
   },
   {
     "hotelName": "盐城如家派柏.云酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "119.84972311877115,34.00471819799479",
@@ -1739,7 +1739,7 @@ const saleRecords = [
   },
   {
     "hotelName": "宜兴窑工民宿酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.6412804268122,31.275863550671666",
@@ -1750,7 +1750,7 @@ const saleRecords = [
   },
   {
     "hotelName": "无锡云格格",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.85499135001075,31.262811534570577",
@@ -1761,7 +1761,7 @@ const saleRecords = [
   },
   {
     "hotelName": "花之筑·春眠酒店（常州店）",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "120.09874169929351,31.765802703275106",
@@ -1772,7 +1772,7 @@ const saleRecords = [
   },
   {
     "hotelName": "宿迁国际大酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "118.28470867278544,33.969532483159554",
@@ -1783,7 +1783,7 @@ const saleRecords = [
   },
   {
     "hotelName": "晚徕酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "120.55908859856454,32.401535257913",
@@ -1794,7 +1794,7 @@ const saleRecords = [
   },
   {
     "hotelName": "雅斯特酒店茂名电白店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "111.22989041093031,21.781659597212833",
@@ -1805,7 +1805,7 @@ const saleRecords = [
   },
   {
     "hotelName": "广东城市便捷",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "110.95125903844826,21.63178102345937",
@@ -1816,7 +1816,7 @@ const saleRecords = [
   },
   {
     "hotelName": "尚客优选（茂名艺龙安云）",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "110.95902803364872,22.36049389737147",
@@ -1827,7 +1827,7 @@ const saleRecords = [
   },
   {
     "hotelName": "雅致酒店(广州二沙岛珠江夜游店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "113.2898737362346,23.119575560279607",
@@ -1838,7 +1838,7 @@ const saleRecords = [
   },
   {
     "hotelName": "番禺安悦酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "113.3718058461783,22.950910443717643",
@@ -1849,7 +1849,7 @@ const saleRecords = [
   },
   {
     "hotelName": "廷泊酒店(佛山顺德店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "113.32597888043246,22.75125747348189",
@@ -1860,7 +1860,7 @@ const saleRecords = [
   },
   {
     "hotelName": "银盏森林君澜温泉酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "113.0800692742766,23.63225833079084",
@@ -1871,7 +1871,7 @@ const saleRecords = [
   },
   {
     "hotelName": "华发螺洞精品度假酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67KD",
     "coordinates": "115.78024807699596,23.27989287621985",
@@ -1882,7 +1882,7 @@ const saleRecords = [
   },
   {
     "hotelName": "北京西三旗 艺龙",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "116.33629390300388,40.063803610539274",
@@ -1893,7 +1893,7 @@ const saleRecords = [
   },
   {
     "hotelName": "北京柏曼",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "116.69487841851024,39.92006975529282",
@@ -1904,7 +1904,7 @@ const saleRecords = [
   },
   {
     "hotelName": "北京柏曼",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "116.69487841851024,39.92006975529282",
@@ -1915,7 +1915,7 @@ const saleRecords = [
   },
   {
     "hotelName": "北京安贞奥体中心亚朵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "116.42182803840855,39.98772004581759",
@@ -1926,7 +1926,7 @@ const saleRecords = [
   },
   {
     "hotelName": "西安周至丽致",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "108.2398561907203,34.16363265718282",
@@ -1937,7 +1937,7 @@ const saleRecords = [
   },
   {
     "hotelName": "西安漫鹿云际酒店（安盛花苑店）",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "108.93455878058964,34.30762604065067",
@@ -1948,7 +1948,7 @@ const saleRecords = [
   },
   {
     "hotelName": "美素酒店（长安大学城韦曲南地铁站店）项目",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "75H55E",
     "coordinates": "108.95123402577136,34.151400068228156",
@@ -1959,7 +1959,7 @@ const saleRecords = [
   },
   {
     "hotelName": "漫鹿云际酒店（明城墙建国门店）",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "108.97954313578225,34.25454235753618",
@@ -1970,7 +1970,7 @@ const saleRecords = [
   },
   {
     "hotelName": "西安艾豪森酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H5K",
     "coordinates": "108.95762241523612,34.266070317976585",
@@ -1981,7 +1981,7 @@ const saleRecords = [
   },
   {
     "hotelName": "西安立丰城美丽致酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "108.91053988786385,34.20244632245546",
@@ -1992,7 +1992,7 @@ const saleRecords = [
   },
   {
     "hotelName": "咸阳美丽豪酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "108.65327902371102,34.31540683398917",
@@ -2003,7 +2003,7 @@ const saleRecords = [
   },
   {
     "hotelName": "漫鹿云际酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "75H55E",
     "coordinates": "108.68707687021842,34.33376703485951",
@@ -2014,7 +2014,7 @@ const saleRecords = [
   },
   {
     "hotelName": "宁强艺龙安悦酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55HS8U11D",
     "coordinates": "106.25991979076305,32.83815383587787",
@@ -2025,7 +2025,7 @@ const saleRecords = [
   },
   {
     "hotelName": "雅斯特-河池都安高铁站店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "108.1137306707569,23.947095890519734",
@@ -2036,7 +2036,7 @@ const saleRecords = [
   },
   {
     "hotelName": "雅斯特 企沙镇",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "108.48110798013468,21.592624840419546",
@@ -2047,7 +2047,7 @@ const saleRecords = [
   },
   {
     "hotelName": "雅斯特桃花湾",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "108.36038551116359,21.642068279045695",
@@ -2058,7 +2058,7 @@ const saleRecords = [
   },
   {
     "hotelName": "广西怡程",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "109.67948463006698,23.613193511657393",
@@ -2069,7 +2069,7 @@ const saleRecords = [
   },
   {
     "hotelName": "广西格丽酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "109.60643244974759,23.105681146682453",
@@ -2080,7 +2080,7 @@ const saleRecords = [
   },
   {
     "hotelName": "临安开元观堂",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.13868603974582,30.167075112023294",
@@ -2091,7 +2091,7 @@ const saleRecords = [
   },
   {
     "hotelName": "富阳忆晶酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "43H3F",
     "coordinates": "119.95051464268637,30.063279579422442",
@@ -2102,7 +2102,7 @@ const saleRecords = [
   },
   {
     "hotelName": "杭州千岛湖酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.1450370432558,29.61299504348213",
@@ -2113,7 +2113,7 @@ const saleRecords = [
   },
   {
     "hotelName": "杭州朗悦酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55HS8U11D",
     "coordinates": "120.27537407443167,30.42957210276512",
@@ -2124,7 +2124,7 @@ const saleRecords = [
   },
   {
     "hotelName": "湖州格林东方",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "119.90290400150478,30.98581233168965",
@@ -2135,7 +2135,7 @@ const saleRecords = [
   },
   {
     "hotelName": "嘉兴平湖海滨之星",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "121.09377459065267,30.609825463592543",
@@ -2146,7 +2146,7 @@ const saleRecords = [
   },
   {
     "hotelName": "丽水君澜",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H68K",
     "coordinates": "119.75821194009241,28.302858513838856",
@@ -2157,7 +2157,7 @@ const saleRecords = [
   },
   {
     "hotelName": "曼格居酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "121.2691008124321,28.930405515012783",
@@ -2168,7 +2168,7 @@ const saleRecords = [
   },
   {
     "hotelName": "久州酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "118.91325239293417,28.906653848940316",
@@ -2179,7 +2179,7 @@ const saleRecords = [
   },
   {
     "hotelName": "合肥鸿福金陵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "117.28254862551012,31.256972040802218",
@@ -2190,7 +2190,7 @@ const saleRecords = [
   },
   {
     "hotelName": "来安加州阳光酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H5K",
     "coordinates": "118.4352282948846,32.4373882468458",
@@ -2201,7 +2201,7 @@ const saleRecords = [
   },
   {
     "hotelName": "悦心酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "116.81137974992986,32.5631060188275",
@@ -2212,7 +2212,7 @@ const saleRecords = [
   },
   {
     "hotelName": "悦心酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "116.81137974992986,32.5631060188275",
@@ -2223,7 +2223,7 @@ const saleRecords = [
   },
   {
     "hotelName": "丽江古城亚朵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "100.28436017731212,26.88735854350249",
@@ -2234,7 +2234,7 @@ const saleRecords = [
   },
   {
     "hotelName": "昆明滇池路亚朵X酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "102.70053520161821,25.022260950841492",
@@ -2245,7 +2245,7 @@ const saleRecords = [
   },
   {
     "hotelName": "西双版纳亚朵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "100.83923495673986,22.00912899424036",
@@ -2256,7 +2256,7 @@ const saleRecords = [
   },
   {
     "hotelName": "云南温德姆酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "102.812182001717,23.62798784754817",
@@ -2267,7 +2267,7 @@ const saleRecords = [
   },
   {
     "hotelName": "马厂美漾",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "113.00491380143683,28.257980651251476",
@@ -2278,7 +2278,7 @@ const saleRecords = [
   },
   {
     "hotelName": "长沙润禾酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "113.06845436369753,28.230771414964387",
@@ -2289,7 +2289,7 @@ const saleRecords = [
   },
   {
     "hotelName": "廷泊酒店(长沙培元桥店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "112.98387665419727,28.211769781313563",
@@ -2300,7 +2300,7 @@ const saleRecords = [
   },
   {
     "hotelName": " 湖南娄底优程酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "112.00449700616466,27.754969012251905",
@@ -2311,7 +2311,7 @@ const saleRecords = [
   },
   {
     "hotelName": "娄底优程酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "112.01303531020362,27.714969686369372",
@@ -2322,7 +2322,7 @@ const saleRecords = [
   },
   {
     "hotelName": "永州格菲",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "111.59417162053843,26.471106914456193",
@@ -2333,7 +2333,7 @@ const saleRecords = [
   },
   {
     "hotelName": "衡阳丽波国际酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "112.70739959798851,26.89160784520132",
@@ -2344,7 +2344,7 @@ const saleRecords = [
   },
   {
     "hotelName": "上海格美",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "121.68829213140233,31.021499371688968",
@@ -2355,7 +2355,7 @@ const saleRecords = [
   },
   {
     "hotelName": "上海简奢酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "121.21687146078763,31.045518914633302",
@@ -2366,7 +2366,7 @@ const saleRecords = [
   },
   {
     "hotelName": "上海荷逸唐酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H5K",
     "coordinates": "121.38162365572576,31.224440183272744",
@@ -2377,7 +2377,7 @@ const saleRecords = [
   },
   {
     "hotelName": "华驿速8",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "106.49240771227902,29.53823909480754",
@@ -2388,7 +2388,7 @@ const saleRecords = [
   },
   {
     "hotelName": "怡致酒店(成都华阳地铁站海洋公园店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "104.07642331987002,30.510177340512097",
@@ -2399,7 +2399,7 @@ const saleRecords = [
   },
   {
     "hotelName": "济南亚朵",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65HS8U11D",
     "coordinates": "117.10661558121149,36.67853283633739",
@@ -2410,7 +2410,7 @@ const saleRecords = [
   },
   {
     "hotelName": "济南银座和美酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "117.14889109613877,36.727764755263166",
@@ -2421,7 +2421,7 @@ const saleRecords = [
   },
   {
     "hotelName": "华驿",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "119.2345020003566,36.43291528552176",
@@ -2432,7 +2432,7 @@ const saleRecords = [
   },
   {
     "hotelName": "山东水玲珑酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "116.97382635394608,35.573808069299595",
@@ -2443,7 +2443,7 @@ const saleRecords = [
   },
   {
     "hotelName": "山东烟台亚朵酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65C240MF",
     "coordinates": "121.457791339239,37.526122474737974",
@@ -2454,7 +2454,7 @@ const saleRecords = [
   },
   {
     "hotelName": "沈阳锦汇酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "123.46684280891068,41.74172108362631",
@@ -2465,7 +2465,7 @@ const saleRecords = [
   },
   {
     "hotelName": "大连远洲酒店项目",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "121.98811246485415,39.6303448037097",
@@ -2476,7 +2476,7 @@ const saleRecords = [
   },
   {
     "hotelName": "新疆欣然酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "75.22057924338783,37.779976559684926",
@@ -2487,7 +2487,7 @@ const saleRecords = [
   },
   {
     "hotelName": "哈茵赛民俗度假村",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "43H3F",
     "coordinates": "84.01030022283494,43.33469064020935",
@@ -2498,7 +2498,7 @@ const saleRecords = [
   },
   {
     "hotelName": "哈茵赛民俗度假村",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H55E",
     "coordinates": "84.01030022283494,43.33469064020935",
@@ -2509,7 +2509,7 @@ const saleRecords = [
   },
   {
     "hotelName": "北屯市葵都里酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H55E",
     "coordinates": "87.80353033392628,47.35602862630982",
@@ -2520,7 +2520,7 @@ const saleRecords = [
   },
   {
     "hotelName": "漫鹿CC 焦作",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "113.21701973659799,35.21489532987177",
@@ -2531,7 +2531,7 @@ const saleRecords = [
   },
   {
     "hotelName": "祥月山居",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "109.49901425795625,30.30526114009295",
@@ -2542,7 +2542,7 @@ const saleRecords = [
   },
   {
     "hotelName": "茅箭大美慧庭酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H67K",
     "coordinates": "110.79847480189734,32.624611911489325",
@@ -2553,7 +2553,7 @@ const saleRecords = [
   },
   {
     "hotelName": "艺龙酒店(呼和浩特兴安北路店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "111.70501768357124,40.83670295067883",
@@ -2564,7 +2564,7 @@ const saleRecords = [
   },
   {
     "hotelName": "艺龙酒店(呼和浩特兴安北路店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "111.70501768357124,40.83670295067883",
@@ -2575,7 +2575,7 @@ const saleRecords = [
   },
   {
     "hotelName": "鄂尔多斯西顿酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "109.99673605627541,39.83843702034658",
@@ -2586,7 +2586,7 @@ const saleRecords = [
   },
   {
     "hotelName": "艺龙酒店(三亚店店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "109.50959251071798,18.26574141260678",
@@ -2597,7 +2597,7 @@ const saleRecords = [
   },
   {
     "hotelName": "海口天艺酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "110.30560105505936,20.025832191343458",
@@ -2608,7 +2608,7 @@ const saleRecords = [
   },
   {
     "hotelName": "花之筑·春眠酒店（兴义店）",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "50H55E",
     "coordinates": "104.91963313608858,25.097877797412817",
@@ -2619,7 +2619,7 @@ const saleRecords = [
   },
   {
     "hotelName": "甘肃兴百顺酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "104.07898115497913,37.20252849884539",
@@ -2630,7 +2630,7 @@ const saleRecords = [
   },
   {
     "hotelName": "艺龙壹棠酒店(上饶经开区凤凰西大道店)",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "65H69K",
     "coordinates": "117.91254382803243,28.43717544917852",
@@ -2641,7 +2641,7 @@ const saleRecords = [
   },
   {
     "hotelName": "林芝怡致酒店",
-    "brand": "其他",
+    "brand": "单体",
     "subbrand": null,
     "model": "55H69K",
     "coordinates": "94.36023108173507,29.662692563051518",

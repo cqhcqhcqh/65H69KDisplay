@@ -24,15 +24,16 @@ db.all('SELECT * FROM hotels', (err, rows) => {
                 provinces.add(row.province);
             }
         }
+        const brand_name = (row.brand_name === '其他' ? '单体' : row.brand_name);
         if (row.brand_name) {
-            brands.add(row.brand_name);
+            brands.add(brand_name);
         }
         if (row.tv_model) {
             models.add(row.tv_model);
         }
         return ({
             hotelName: row.hotel_name,
-            brand: row.brand_name,    // 品牌名称
+            brand: brand_name,    // 品牌名称
             subbrand: row.subbrand_name,
             model: row.tv_model,       // 电视机型号
             coordinates: `${row.longitude},${row.latitude}`, // 经纬度

@@ -1,6 +1,7 @@
 // 初始化地图和饼状图
 const mapChart = echarts.init(document.getElementById('map'));
 const chart = echarts.init(document.getElementById('chart'));
+// const pieChart = echarts.init(document.getElementById('pie'));
 let currentMap = 'china';
 
 // 加载 SQLite 数据（用 Node.js 预处理生成 JSON）
@@ -52,20 +53,60 @@ function initFilters(data) {
     modelFilter.innerHTML = data['models'].map(b => `<option>${b}</option>`).join('')
 }
 
+function fillBrandList(brands) {
+    const brandList = document.getElementById('brand-list');
+    let selectedItem = null; // 跟踪当前选中的 item
+    brandList.innerHTML = ''; // 清空现有内容
+    for (const brand of brands) {
+        const item = document.createElement('div');
+        item.className = 'brand-item';
+        item.textContent = brand;
+
+        // 点击事件
+        item.addEventListener('click', function() {
+            // 如果已经有选中项且不是当前点击的项，取消前一个选中
+            if (selectedItem && selectedItem !== this) {
+                selectedItem.classList.remove('selected');
+            }
+
+            // 切换当前项的选中状态
+            this.classList.toggle('selected');
+
+            // 更新 selectedItem
+            if (this.classList.contains('selected')) {
+                selectedItem = this; // 当前项被选中
+            } else {
+                selectedItem = null; // 取消选中后清空
+            }
+
+            console.log(`当前选中: ${selectedItem ? selectedItem.textContent : '无'}`);
+
+            // document.getElementById('brandFilter').value = selectedItem.textContent;
+            // console.log(`textContent: ${selectedItem.textContent} value: ${document.getElementById('brandFilter').value}`)
+            filteredByBrand(selectedItem.textContent);
+        });
+        brandList.appendChild(item);
+    }
+}
+
 // 更新地图（保持不变，但从数据库数据中读取）
 function updateMap(filteredData) {
+    let geo = {
+        map: currentMap,
+        roam: false,
+        itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' }
+    }
+    if (currentMap !== 'china') {
+        geo = { ...geo, map:'china', center: getRandomElementAt(filteredData).coordinates.split(','), zoom: 1.5 }
+    }
+
     mapChart.setOption({
         backgroundColor: '#1e3c72',
-        geo: {
-            map: currentMap,
-            roam: false,
-            itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' }
-            // silent: true
-        },
+        geo: geo,
         series: [{
             type: 'scatter',
             coordinateSystem: 'geo',
-            data: filteredData.slice(0, 50).map(item => ({
+            data: filteredData.map(item => ({
                 name: item.hotelName,
                 value: item.coordinates.split(',').map(Number).concat(item.supply)
             })),
@@ -78,10 +119,19 @@ function updateMap(filteredData) {
     });
 }
 
+function getRandomElementAt(arr) {
+    if (arr < 1) {
+        return;
+    }
+    const length = arr.length;
+    const randomIndex = Math.floor(Math.random() * length);
+    return arr[randomIndex];
+}
+
 // 更新统计（保持不变）
 function updateStats(filteredData) {
-    document.getElementById('hotelCount').textContent = filteredData.length;
-    document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0);
+    document.getElementById('hotelCount').textContent = filteredData.length + '家';
+    document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0) + '台';
 }
 
 function updateChart(filteredData) {
@@ -110,34 +160,21 @@ function updateChart(filteredData) {
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} : {c}' // 工具提示显示名称和值
-        },
-        xAxis: {
-            type: 'category',
-            data: chartData.map(item => item.name), // X轴使用数据的名称
-            axisLabel: {
-                fontSize: 12,
-                rotate: 45 // 如果名称较长，可旋转标签
-            }
-        },
-        yAxis: {
-            type: 'value',
-            axisLabel: {
-                fontSize: 12
-            }
+            formatter: '{a} <br/>{b} ({d}%)' // 显示名称、值和百分比
         },
         series: [{
             name: '尺寸占比',
-            type: 'bar',                // 改为柱形图
-            data: chartData,           // 使用计算后的数据
-            barWidth: '40%',           // 柱子宽度
+            type: 'pie',                // 修改为饼状图
+            radius: '100%',             // 饼图的半径，可以调整大小
+            center: ['50%', '50%'],    // 饼图中心位置
+            data: chartData,           // 数据保持不变
             label: {
                 show: true,            // 显示标签
-                position: 'top',       // 标签显示在柱子上方
-                formatter: '{c}',      // 显示值
-                fontSize: 12
+                formatter: '{b} ({d}%)', // 显示名称、值和百分比
+                fontSize: 12,
+                position: 'inside',
             },
-            itemStyle: { // 添加到这里，用于正常状态的颜色
+            itemStyle: {
                 color: function(params) {
                     const colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de'];
                     return colors[params.dataIndex % colors.length];
@@ -149,7 +186,7 @@ function updateChart(filteredData) {
                     shadowOffsetX: 0,
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
-            },
+            }
         }]
     });
 }
@@ -157,14 +194,14 @@ function updateChart(filteredData) {
 // 更新索引信息（品牌布局和尺寸数量）
 function updateIndex(filteredData) {
     const selectedBrand = document.getElementById('brandFilter').value;
-    const selectedModel = document.getElementById('modelFilter').value;
+    // const selectedModel = document.getElementById('modelFilter').value;
 
     let brandData = filteredData;
-    if (selectedBrand !== '所有品牌') {
+    if (selectedBrand !== '所有品牌' && selectedBrand !== '') {
         brandData = filteredData.filter(item => item.brand === selectedBrand);
     }
-    const provinces = [...new Set(brandData.map(item => item.brand))].join(', ');
-    document.getElementById('brandIndex').textContent = provinces;
+    const brands = [...new Set(brandData.map(item => item.brand))].join(', ');
+    document.getElementById('brandIndex').textContent = brands;
 
     // let modelData = filteredData;
     // if (selectedModel !== '所有型号') {
@@ -194,6 +231,35 @@ function updateAll(data) {
         filtered = filtered.filter(item => chineseProvince2MapProvince(item.province) === currentMap);
     }
     
+    if (filtered.length < 1) {
+        alert(`暂无销售记录`);
+        return
+    }
+
+    try {
+        updateMap(filtered);
+        updateStats(filtered);
+        updateChart(filtered);
+        updateIndex(filtered);
+    } catch (e) {
+        alert(`updateAll: ${e}`)
+        throw e
+    }
+}
+
+function filteredByBrand(selectedBrand) {
+    let filtered = window.projectData;
+    if (selectedBrand ) {
+        filtered = filtered.filter(item =>
+            (selectedBrand === '所有品牌' || item.brand === selectedBrand)
+        );
+    }
+
+    if (currentMap !== 'china') {
+        // 按地图层级过滤
+        filtered = filtered.filter(item => chineseProvince2MapProvince(item.province) === currentMap);
+    }
+
     if (filtered.length < 1) {
         alert(`暂无销售记录`);
         return
@@ -269,7 +335,7 @@ async function initApp() {
 }
 
 async function initLocalApp() {
-    initFilters(filters)
+    fillBrandList(filters['brands'].slice(1))
     window.projectData = saleRecords;
     updateAll(saleRecords);
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="brand-list"></div>
     <!-- 筛选控件 -->
     <div id="controls">
         <select id="brandFilter"><option value="">所有品牌</option></select>
@@ -15,15 +16,17 @@
     </div>
     <!-- 地图容器 -->
     <div id="map"></div>
+    <div id="title">辉玥科技项目版图</div>
     <!-- 数据统计和索引 -->
     <div id="stats">
         <h3>数据统计</h3>
-        <p><strong>酒店数量:</strong> <span id="hotelCount"></span></p>
-        <p><strong>供货数量:</strong> <span id="supplyCount"></span></p>
+        <p><strong>酒店:</strong> <span id="hotelCount"></span></p>
+        <p><strong>供货量:</strong> <span id="supplyCount"></span></p>
         <div id="indexInfo">
             <p>品牌: <span id="brandIndex"></span></p>
         </div>
         <div id="chart"></div>
+        <div id="pie"></div>
     </div>
     <script src="data/filters.js"></script>
     <script src="data/data.js"></script>
