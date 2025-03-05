@@ -134,12 +134,20 @@ function updateStats(filteredData) {
     document.getElementById('supplyCount').textContent = filteredData.reduce((sum, item) => sum + item.supply, 0) + '台';
 }
 
+function isNumeric(str) {
+    if (typeof str !== "string") return false; // 确保输入是字符串
+    return !isNaN(Number(str)) && str.trim() !== "";
+}
+
 function updateChart(filteredData) {
     // 按 tv_model 统计供货数
     const sizeData = filteredData.reduce((acc, item) => {
-        const sizeName = item.model.slice(0, 2) + '寸'
-        acc[sizeName] = (acc[sizeName] || 0) + item.supply;
-        return acc;
+        const size = item.model.slice(0, 2);
+        if (isNumeric(size)) {
+            const sizeName = size + '寸'
+            acc[sizeName] = (acc[sizeName] || 0) + item.supply;
+        }
+        return acc
     }, {});
 
     // 计算总数以计算百分比
@@ -152,6 +160,20 @@ function updateChart(filteredData) {
         percent: totalSupply > 0 ? ((value / totalSupply) * 100).toFixed(1) : 0 // 计算百分比，保留2位小数
     }));
 
+    const processedData = chartData.map(item => {
+        const total = chartData.reduce((sum, d) => sum + d.value, 0);
+        const percent = (item.value / total) * 100;
+        return {
+            ...item,
+            label: {
+                show: true,
+                position: percent < 5 ? 'outside' : 'inside',
+                formatter: '{b}({d}%)'
+            }
+        };
+    });
+
+    chart.clear();
     chart.setOption({
         title: { 
             text: '尺寸占比', 
@@ -160,23 +182,25 @@ function updateChart(filteredData) {
         },
         tooltip: {
             trigger: 'item',
-            formatter: '{a} <br/>{b} ({d}%)' // 显示名称、值和百分比
+            // formatter: '{a} <br/>{b} ({d}%)' // 显示名称、值和百分比
         },
         series: [{
             name: '尺寸占比',
             type: 'pie',                // 修改为饼状图
-            radius: '100%',             // 饼图的半径，可以调整大小
+            radius: '80%',             // 饼图的半径，可以调整大小
             center: ['50%', '50%'],    // 饼图中心位置
-            data: chartData,           // 数据保持不变
-            label: {
-                show: true,            // 显示标签
-                formatter: '{b} ({d}%)', // 显示名称、值和百分比
-                fontSize: 12,
-                position: 'inside',
+            data: processedData,           // 数据保持不变
+            labelLine: {
+                show: true,            // 显示连接线（仅对外部标签生效）
+                length: 18,            // 连接线第一段长度
+                length2: 18            // 连接线第二段长度
             },
             itemStyle: {
                 color: function(params) {
-                    const colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de'];
+                    const colors = [
+                        '#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de',
+                        '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc', '#b5b867'
+                    ];
                     return colors[params.dataIndex % colors.length];
                 }
             },
