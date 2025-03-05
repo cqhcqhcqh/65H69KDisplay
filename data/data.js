@@ -686,11 +686,11 @@ const saleRecords = [
     "brand": "万达",
     "subbrand": null,
     "model": "65H69K",
-    "coordinates": "103.96988859825308,36.04074518121642",
+    "coordinates": "101.84,36.58",
     "supply": 181,
     "province": "青海省",
-    "city": "兰州市",
-    "location": "青海省兰州和平镇方家泉村环境资源学校斜对面"
+    "city": "西宁市",
+    "location": "青海省 西宁市 城东区 八一路街道 吾悦华府南门万达美华酒店"
   },
   {
     "hotelName": "榆林万达美华酒店",
@@ -3172,7 +3172,7 @@ const saleRecords = [
     "brand": "单体",
     "subbrand": null,
     "model": "43H3F",
-    "coordinates": "null,null",
+    "coordinates": "113.2,28.2",
     "supply": 52,
     "province": "湖南省",
     "city": "长沙市",
