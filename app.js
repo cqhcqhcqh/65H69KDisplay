@@ -94,7 +94,13 @@ function updateMap(filteredData) {
     let geo = {
         map: currentMap,
         roam: false,
-        itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' }
+        itemStyle: { areaColor: '#2a5298', borderColor: '#ffffff' },
+        label: {
+            show: true,
+            color: '#fff',
+            fontSize: 8,
+            position: 'inside',
+        }
     }
     if (currentMap !== 'china') {
         geo = { ...geo, map:'china', center: getRandomElementAt(filteredData).coordinates.split(','), zoom: 1.5 }
@@ -111,7 +117,7 @@ function updateMap(filteredData) {
                 value: item.coordinates.split(',').map(Number).concat(item.supply)
             })),
             symbol: 'image://./resources/images/star.png',
-            symbolSize: 16,
+            symbolSize: 8,
             animation: false
         }]
     }, {
@@ -168,7 +174,7 @@ function updateChart(filteredData) {
             label: {
                 show: percent > 0.1,
                 position: percent < 2 ? 'outside' : 'inside',
-                formatter: '{b}({d}%)'
+                formatter: '{b}({d}%)',
             }
         };
     });
@@ -192,6 +198,7 @@ function updateChart(filteredData) {
             },
             label: {                   // 添加 label 配置
                 fontSize: 8,          // 设置字体大小（例如 14px）
+                color: '#000'
             },
             itemStyle: {
                 color: function(params) {
@@ -215,6 +222,7 @@ function updateChart(filteredData) {
 
 // 更新索引信息（品牌布局和尺寸数量）
 function updateIndex(filteredData) {
+    return
     const selectedBrand = document.getElementById('brandFilter').value;
     // const selectedModel = document.getElementById('modelFilter').value;
 
@@ -357,7 +365,7 @@ async function initApp() {
 }
 
 async function initLocalApp() {
-    fillBrandList(filters['brands'].slice(1))
+    // fillBrandList(filters['brands'].slice(1))
     window.projectData = saleRecords;
     updateAll(saleRecords);
 }

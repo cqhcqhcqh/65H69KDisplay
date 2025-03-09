@@ -44,7 +44,7 @@ select, button {
     left: 50%; /* 水平居中 */
     transform: translateX(-50%); /* 精确居中 */
     color: #ffd700;
-    font-size: 36px;
+    font-size: 24px;
 }
 
 #brand-list {
@@ -54,7 +54,7 @@ select, button {
     width: 8vw;
     max-height: 2000px;
     padding: 8px;
-    background: white;
+    /* background: white; */
     /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     display: block; /* 或使用 block 并配合内容 */
     z-index: 10;
@@ -63,35 +63,33 @@ select, button {
 
 .brand-item {
     padding: 5px;
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     border: 0.5px solid #ddd;
     /* border-radius: 5px; */
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 16px;
     text-align: center;
-}
-
-.brand-item:hover {
-    background: #f0f0f0;
+    color: white;
 }
 
 .brand-item.selected {
     color: #ffd700;
-    background: #e0f0ff;
     border-color: #e0f0ff;
     box-shadow: 0 0 5px #e0f0ff;
 }
 
 #stats {
+    transform: scale(0.5); /* 整体缩小到 80% */
+    transform-origin: bottom right;
     position: absolute;      /* 宽屏时跟随 flex 布局 */
-    bottom: 20px;
+    bottom: 10px;
     right: 20px;
     width: 20vw;
     min-height: 200px;
     padding: 8px;
     background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px white;
     display: block; /* 或使用 block 并配合内容 */
     z-index: 10;
     border-radius: 8px;
@@ -108,7 +106,6 @@ select, button {
     font-size: 16px;         /* 增大数字字体，进一步突出 */
     color: #ffd700;          /* 使用金色，鲜艳突出，与地图蓝色形成对比 */
     font-weight: bold;       /* 加粗数字，确保突出 */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 添加轻微阴影，提升立体感 */
 }
 
 #stats h3 {
@@ -123,7 +120,7 @@ select, button {
 
 #chart {
     width: 100%;
-    height: 20vw; /* 饼图高度随屏幕宽度调整，最小 200px，最大 400px */
+    height: 18vw; /* 饼图高度随屏幕宽度调整，最小 200px，最大 400px */
 }
 
 /* 窄屏（手机，≤ 414px） */
