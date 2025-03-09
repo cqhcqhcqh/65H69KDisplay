@@ -188,16 +188,16 @@ function updateChart(filteredData) {
         series: [{
             name: '尺寸占比',
             type: 'pie',                // 修改为饼状图
-            radius: '80%',             // 饼图的半径，可以调整大小
+            radius: '100%',             // 饼图的半径，可以调整大小
             center: ['50%', '50%'],    // 饼图中心位置
             data: processedData,           // 数据保持不变
             labelLine: {
-                show: true,            // 显示连接线（仅对外部标签生效）
+                show: false,            // 显示连接线（仅对外部标签生效）
                 length: 12,            // 连接线第一段长度
                 length2: 18            // 连接线第二段长度
             },
             label: {                   // 添加 label 配置
-                fontSize: 8,          // 设置字体大小（例如 14px）
+                fontSize: 12,          // 设置字体大小（例如 14px）
                 color: '#000'
             },
             itemStyle: {
