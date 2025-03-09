@@ -44,30 +44,32 @@ select, button {
     left: 50%; /* 水平居中 */
     transform: translateX(-50%); /* 精确居中 */
     color: #ffd700;
-    font-size: 46px;
+    font-size: 36px;
 }
 
 #brand-list {
     position: absolute;      /* 宽屏时跟随 flex 布局 */
     top: 20px;
     left: 20px;
-    width: 200px;
+    width: 8vw;
     max-height: 2000px;
-    padding: 15px;
+    padding: 8px;
     background: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
     display: block; /* 或使用 block 并配合内容 */
     z-index: 10;
     border-radius: 8px;
 }
 
 .brand-item {
-    padding: 15px;
+    padding: 5px;
     background: #f9f9f9;
-    border: 1px solid #ddd;
+    border: 0.5px solid #ddd;
     /* border-radius: 5px; */
     cursor: pointer;
     transition: all 0.2s ease;
+    font-size: 16px;
+    text-align: center;
 }
 
 .brand-item:hover {
@@ -85,9 +87,9 @@ select, button {
     position: absolute;      /* 宽屏时跟随 flex 布局 */
     bottom: 20px;
     right: 20px;
-    width: 500px;
+    width: 20vw;
     min-height: 200px;
-    padding: 15px;
+    padding: 8px;
     background: white;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     display: block; /* 或使用 block 并配合内容 */
@@ -97,20 +99,31 @@ select, button {
 
 /* 突出数字（span），保持标题（strong）清晰 */
 #stats p strong {
-    font-size: 22px;         /* 减小标题字体，保持清晰但不突出 */
+    font-size: 16px;         /* 减小标题字体，保持清晰但不突出 */
     color: #333;             /* 深灰色，普通颜色，不抢眼 */
     font-weight: normal;     /* 取消加粗，保持普通粗细 */
 }
 
 #stats p span {
-    font-size: 28px;         /* 增大数字字体，进一步突出 */
+    font-size: 16px;         /* 增大数字字体，进一步突出 */
     color: #ffd700;          /* 使用金色，鲜艳突出，与地图蓝色形成对比 */
     font-weight: bold;       /* 加粗数字，确保突出 */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* 添加轻微阴影，提升立体感 */
 }
+
+#stats h3 {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+#stats p {
+    margin: 4px 0;
+    line-height: 1.2;
+}
+
 #chart {
     width: 100%;
-    height: clamp(200px, 25vw, 500px); /* 饼图高度随屏幕宽度调整，最小 200px，最大 400px */
+    height: 20vw; /* 饼图高度随屏幕宽度调整，最小 200px，最大 400px */
 }
 
 /* 窄屏（手机，≤ 414px） */
@@ -133,7 +146,7 @@ select, button {
     }
 
     #chart {
-        height: clamp(150px, 40vw, 200px); /* 窄屏时饼图更小，随宽度调整 */
+        height: 20vw; /* 窄屏时饼图更小，随宽度调整 */
         margin: 0 auto;        /* 居中显示 */
     }
 

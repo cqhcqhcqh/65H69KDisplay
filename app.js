@@ -166,8 +166,8 @@ function updateChart(filteredData) {
         return {
             ...item,
             label: {
-                show: true,
-                position: percent < 5 ? 'outside' : 'inside',
+                show: percent > 0.1,
+                position: percent < 2 ? 'outside' : 'inside',
                 formatter: '{b}({d}%)'
             }
         };
@@ -175,11 +175,6 @@ function updateChart(filteredData) {
 
     chart.clear();
     chart.setOption({
-        title: { 
-            text: '尺寸占比', 
-            left: 'center', 
-            textStyle: { fontSize: 24 } 
-        },
         tooltip: {
             trigger: 'item',
             // formatter: '{a} <br/>{b} ({d}%)' // 显示名称、值和百分比
@@ -192,8 +187,11 @@ function updateChart(filteredData) {
             data: processedData,           // 数据保持不变
             labelLine: {
                 show: true,            // 显示连接线（仅对外部标签生效）
-                length: 18,            // 连接线第一段长度
+                length: 12,            // 连接线第一段长度
                 length2: 18            // 连接线第二段长度
+            },
+            label: {                   // 添加 label 配置
+                fontSize: 8,          // 设置字体大小（例如 14px）
             },
             itemStyle: {
                 color: function(params) {
